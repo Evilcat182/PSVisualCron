@@ -1,28 +1,36 @@
-**Description**
+## ABOUT
 
-Powershellmodule to manage VisualCron Servers.
-Supported Commands:
-- Connect-VCServer
-- Disconnect-VCServer
-- Get-VCCredential
-- Get-VCJob
-- Get-VCSelectedServer
-- Get-VCServer
-- Get-VCTask
-- Set-VCSelectedServer
-- Start-VCJob
-- Start-VCServer
-- Stop-VCServer
+PSVisualCron is a Powershell module for managing VisualCron Servers.<br>
+VisualCron is a Job Schedulling software for windows based computers.<br>
+With this software it is possible to automate nearly everything, without having to write 1 line of code, everything is GUI based.
+<br>
+**So where is the fun in that?**<br><br>
+Therefore you can start coding again, using this powershell module.
+<br>
+If you want more informations about VisualCron and its endless possibilities,<br>
+visit the vendors website, just keep in mind, that this is a payed software.<br>
+https://www.visualcron.com/
+<br><h3>Supported Version: 9.9.10<h3>
+<br>
+## INSTALLATION
 
-
-**Installation**
-```
-Register-PSRepository HAUPSRepo -SourceLocation '\\hau-psrepo\haupsrepo$' -InstallationPolicy Trusted
-Install-Module Hau.PSVisualCron -Repository HauPsRepo -Scope CurrentUser
+```powershell
+Install-Module PSVisualCron
 ```
 
+Link to PowershellGallery: https://www.powershellgallery.com/packages/PSVisualCron
 
-**Usage**
+<br><br><br>
+## DESCRIPTION
+
+Powershellmodule to manage VisualCron Servers.<br>
+Supported Commands:<br>
+<br>
+![Screenshot](get-command.png)
+
+
+
+## USAGE
 
 Connect to local VC Server using current Session Credentials
 ```
