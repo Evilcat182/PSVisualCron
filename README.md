@@ -24,10 +24,39 @@ Link to PowershellGallery: https://www.powershellgallery.com/packages/PSVisualCr
 ## DESCRIPTION
 
 Powershellmodule to manage VisualCron Servers.<br>
+Just like with the Visualcron Client GUI, it is possible for the powershell module to establish and maintain multible connection to different servers.
+This is very usefull if you want to compare something or if you want to copy objects from one server to another.<br>
+You can list all connected servers with the Get-VCServer CmdLet:
+```powershell
+Get-VCServer -Connected
+```
+most CmdLet within this modulw support a -VCServer Parameter, so you can decide on with server or servers the command will be executed.
+With this technice, bulk changes are a cakewalk.<br>
+For example, the command
+```powershell
+Get-VCServer | Get-VCJob -Name 'Backup' | Set-VCJob -Enabled $false
+```
+disables the job calles 'Backup' on every priviously connected vcserver.<br>
+<br>
+If you execute a PSVisualcron CmdLet without the -VCServer Parameter, the command will be executed on the default/selected VCServer.<br>
+Usually this is the last successfull connect VCServer, or a server of your choosing.
+ ```powershell
+Get-VCServer -Name 'Home' | Set-VCSelectedServer
+Get-VCJob
+Get-VCSelectedServer
+```
+In this case, the user decided to set the server with the name "Home" as the default VCServer using the "Set-VCSelectedServer" CmdLet.<br>
+Now the user can execute 'Get-VCJob' CmdLet without explicitly setting the VCServer Parameter, and the command will execute on the priviously set 'Home' Server.<br>
+The show the defvault/selected VCServer, use the 'Get-VCSelectedServer' CmdLet.
+
+
+  
 Supported Commands:<br>
 <br>
 ![Screenshot](get-command.png)
 
+  <br><br><br><br><br>
+<h1>OLD DOCUMENTATION<h1>
 
 
 ## USAGE
